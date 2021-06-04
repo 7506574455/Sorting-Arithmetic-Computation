@@ -23,7 +23,7 @@ for (( i=0; i<$arrayLength; i++ ))
 do
 	for (( j=0; j<$arrayLength-$i-1; j++ ))
 	do
-		if [ ${dictToArray[j]} -lt ${dictToArray[$((j+1))]} ]
+		if [ ${dictToArray[j]} -gt ${dictToArray[$((j+1))]} ]
 		then
 			temp=${dictToArray[j]}
 			dictToArray[$j]=${dictToArray[$((j+1))]}
@@ -31,4 +31,5 @@ do
 		fi
 	done
 done
-echo "Array in Descending order:" ${dictToArray[*]}
+echo "Array in Ascending order:" ${dictToArray[*]}
+
